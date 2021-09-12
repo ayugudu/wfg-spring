@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+    <bean id = "userDao" class="org.example.bean.UserDao"></bean>
+
+    <bean id="userService" class="org.example.bean.UserService">
+        <property name ="id" value ="1"></property>
+        <property name = "userDao" ref="userDao"></property>
+    </bean>
+
+</beans>
