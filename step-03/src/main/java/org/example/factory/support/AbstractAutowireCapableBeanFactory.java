@@ -10,6 +10,7 @@ import java.lang.reflect.Constructor;
  * 用于实现 createBean 方法，而createBean 需要实例化，实例化的策略
  */
 public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFactory{
+
   private InstantiationStrategy instantiationStrategy = new SimpleInstantiationStrategy();
 
     @Override

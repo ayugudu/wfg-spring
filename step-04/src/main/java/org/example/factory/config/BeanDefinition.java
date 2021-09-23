@@ -19,6 +19,7 @@ public class BeanDefinition {
 
     public BeanDefinition(Class beanClass){
         this.beanClass=beanClass;
+        propertyValues=new PropertyValues();
     }
 
     public BeanDefinition(Class beanClass,PropertyValues propertyValues){

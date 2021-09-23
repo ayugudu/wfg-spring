@@ -28,7 +28,7 @@ public abstract  class AbstractBeanFactory extends DefaultSingletonBeanRegistry 
         return  createBean(name,beanDefinition);
     }
 
-    protected abstract BeanDefinition getBeanDefinition(String name);
+    protected   abstract BeanDefinition getBeanDefinition(String name);
     protected  abstract  Object createBean(String name,BeanDefinition beanDefinition);
 
 }

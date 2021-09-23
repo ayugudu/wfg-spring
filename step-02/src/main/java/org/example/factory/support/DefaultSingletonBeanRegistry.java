@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DefaultSingletonBeanRegistry implements SingletonBeanRegistry {
+
     private Map<String ,Object> singletonObjects= new HashMap<>();
 
     @Override
