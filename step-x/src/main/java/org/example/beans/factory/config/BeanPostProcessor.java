@@ -8,7 +8,7 @@ public interface BeanPostProcessor {
      * @param beanName
      * @return
      */
-    Object postProcessBeforeInitialization(Object bean,String beanName);
+    Object postProcessBeforeInitialization(Object bean,String beanName) throws Exception;
 
 
     /**

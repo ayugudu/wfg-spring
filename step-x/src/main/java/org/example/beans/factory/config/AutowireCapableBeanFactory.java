@@ -8,7 +8,7 @@ public interface AutowireCapableBeanFactory extends BeanFactory {
      * 增加扩展方法
      */
 
-    Object applyBeanPostProcessorsBeforeInitialization(Object existing,String beanName);
+    Object applyBeanPostProcessorsBeforeInitialization(Object existing,String beanName) throws Exception;
 
 
     Object applyBeanPostProcessorsAfterInitialization(Object existingBean,String beanName);

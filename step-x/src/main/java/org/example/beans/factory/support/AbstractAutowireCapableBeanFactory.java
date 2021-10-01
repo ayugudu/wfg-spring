@@ -84,7 +84,7 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
         }
 
     }
-   private Object initializeBean(String beanName,Object bean,BeanDefinition beanDefinition){
+   private Object initializeBean(String beanName,Object bean,BeanDefinition beanDefinition) throws Exception {
 
         if(bean instanceof Aware){
            if(bean instanceof BeanFactoryAware){
@@ -134,7 +134,7 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
    }
 
     @Override
-    public Object applyBeanPostProcessorsBeforeInitialization(Object existing, String beanName) {
+    public Object applyBeanPostProcessorsBeforeInitialization(Object existing, String beanName) throws Exception {
        Object result =existing;
        for(BeanPostProcessor beanPostProcessor: getBeanPostProcessorList()){
            Object object = beanPostProcessor.postProcessBeforeInitialization(result,beanName);
