@@ -5,7 +5,7 @@ import org.example.beans.factory.FactoryBean;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class FactoryBeanRegistrySupport extends DefaultSingletonBeanRegistry{
+public abstract class  FactoryBeanRegistrySupport extends DefaultSingletonBeanRegistry{
 
     private final Map<String,Object> factoryBeanObjectCache = new ConcurrentHashMap<>();
 
