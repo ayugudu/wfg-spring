@@ -1,9 +1,11 @@
 package org.example.aop.aspect;
 
+
+
 import org.aopalliance.aop.Advice;
-import org.aspectj.weaver.tools.PointcutParser;
 import org.example.aop.Pointcut;
 import org.example.aop.PointcutAdvisor;
+
 
 /**
  * 切面的实现
@@ -40,4 +42,10 @@ public class AspectJExpressionPointcutAdvisor implements PointcutAdvisor {
     public void setAdvice(Advice advice) {
         this.advice = advice;
     }
+
+    public void setPointcut(AspectJExpressionPointcut pointcut) {
+        this.pointcut = pointcut;
+    }
+
+
 }

@@ -11,6 +11,6 @@ public interface ConfigurableBeanFactory extends HierarchicalBeanFactory,Singlet
 
     void addBeanPostProcessor(BeanPostProcessor beanPostProcess);
 
-    void destroySingletons()throws Exception;
+    void destroySingletons();
 
 }

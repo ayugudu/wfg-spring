@@ -31,7 +31,7 @@ public class DefaultSingletonBeanRegistry implements SingletonBeanRegistry {
         disposableBeans.put(beanName, bean);
     }
 
-    public void destroySingletons()throws Exception{
+    public void destroySingletons(){
         Set<String> keySet =this.disposableBeans.keySet();
 
         Object[] disposableBeanNames= keySet.toArray(new String[0]);
@@ -42,7 +42,11 @@ public class DefaultSingletonBeanRegistry implements SingletonBeanRegistry {
 
             DisposableBean disposableBean = disposableBeans.remove(beanName);
 
-            disposableBean.destroy();
+            try {
+                disposableBean.destroy();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
         }
 

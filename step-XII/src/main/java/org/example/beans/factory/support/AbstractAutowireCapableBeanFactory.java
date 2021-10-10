@@ -59,17 +59,21 @@ public abstract class AbstractAutowireCapableBeanFactory extends  AbstractBeanFa
     }
 
      protected  void applyPropertyValues(String beanName,Object bean,BeanDefinition beanDefinition){
-         PropertyValues propertyValues = beanDefinition.getPropertyValues();
+       try{  PropertyValues propertyValues = beanDefinition.getPropertyValues();
          for(PropertyValue propertyValue : propertyValues.getPropertyValues()){
              String name  =propertyValue.getName();
              Object value =propertyValue.getValue();
 
              if(value instanceof BeanReference){
-                  BeanReference beanReference = (BeanReference) value;
+                    BeanReference beanReference = (BeanReference) value;
                    value = getBean(beanReference.getBeanName());
              }
               BeanUtil.setFieldValue(bean,name,value);
          }
+       }
+       catch (Exception e) {
+           throw new BeansException("Error setting property values：" + beanName);
+       }
 
 
      }

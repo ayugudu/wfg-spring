@@ -18,7 +18,8 @@ import java.util.Collection;
  * 会自动搜寻容器内所有的advisor 信息（切面），然后根据其拦截信息，为其生成相应的代理对象
  */
 public class DefaultAdvisorAutoProxyCreator implements InstantiationAwareBeanPostProcessor, BeanFactoryAware {
-   private DefaultListableBeanFactory beanFactory;
+
+    private DefaultListableBeanFactory beanFactory;
 
     @Override
     public void setBeanFactory(BeanFactory beanFactory) {
